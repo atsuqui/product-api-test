@@ -34,7 +34,7 @@ public class ProductController {
         } catch (ProductNotFoundException ex) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Product Not found");
         }catch (Throwable th){
-            log.error("Error find similars for product: {}. {}", productId, th);
+            log.error("Error find similars for product: {}.", productId, th);
             return ResponseEntity.internalServerError().body("");
         }
 
